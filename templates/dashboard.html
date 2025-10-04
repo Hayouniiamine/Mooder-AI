@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mooder AI - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <!-- Load face-api.js from the local 'face-api.js-master' folder -->
+    <script src="{{ url_for('static', filename='js/face-api.js-master/dist/face-api.js') }}"></script>
+    
+    <!-- Custom face recognition script -->
+    <script type="module" src="{{ url_for('static', filename='js/face_recognition.js') }}"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="profile-container">
+            <a href="{{ url_for('account') }}">
+                <img src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="Profile Avatar" class="profile-avatar">
+            </a>
+        </div>
+        <h2>Welcome, <span id="username">{{ current_user.username }}</span>!</h2>
+    </header>
+
+    <div class="dashboard-container">
+        <h1 class="title">🎭 Mooder AI - Face Recognition 🎭</h1>
+
+        <div class="dashboard-content">
+            <div class="phone-frame">
+                <div class="phone">
+                    <img src="{{ url_for('static', filename='img/phone.jpg') }}" alt="Phone Frame" class="phone-image">
+                    <div class="camera-screen">
+                        <!-- Initially hide the video element -->
+                        <video id="video" width="640" height="480" autoplay style="display: none;"></video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description">
+                <h2>Discover Your Mood with AI</h2>
+                <p>Mooder AI analyzes your facial expressions and selects the perfect music for you.</p>
+
+                <button class="btn" id="detectMoodBtn">🔍 Detect Mood</button>
+
+                <div id="mood-result" class="mood-result" style="display: none;">
+                    <p id="mood-message"></p>
+                    <!-- Button now links to the player page with mood parameter -->
+                    <a id="listen-music-btn" href="#" class="btn btn-alt">🎶 Listen to Some Music</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="about">
+                <h3>About Mooder AI</h3>
+                <p>
+                    Mooder AI is an intelligent music player that adapts to your emotions. Using facial recognition technology, it detects your mood and plays music that fits your feelings. Experience a seamless connection between emotions and melodies!
+                </p>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 Mooder AI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Elements for detecting mood and displaying result
+        const video = document.getElementById('video');
+        const detectMoodBtn = document.getElementById('detectMoodBtn');
+        const moodMessage = document.getElementById('mood-message');
+        const listenMusicBtn = document.getElementById('listen-music-btn');
+        const moodResultDiv = document.getElementById('mood-result');
+
+        // Event listener for clicking on 'Detect Mood' button
+        detectMoodBtn.addEventListener('click', async function(event) {
+            event.preventDefault();
+            moodResultDiv.style.display = 'none'; // Hide the previous result
+            moodMessage.textContent = "Detecting mood..."; // Display loading message
+
+            // Start the webcam
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+                video.style.display = 'block';  // Show video element once stream is ready
+
+                // Start face-api.js detection after webcam is active
+                const detections = await faceapi.detectSingleFace(video).withFaceLandmarks().withFaceExpressions();
+
+                if (!detections) {
+                    alert("No face detected! Please try again.");
+                    return;
+                }
+
+                // Get the mood based on detected expressions
+                const expressions = detections.expressions;
+                const mood = Object.keys(expressions).reduce((a, b) => expressions[a] > expressions[b] ? a : b);
+
+                // Send the mood to the server
+                const response = await fetch("/detect_mood", {
+                    method: "POST",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mood: mood })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Display the detected mood
+                    moodMessage.textContent = `Detected Mood: ${mood.charAt(0).toUpperCase() + mood.slice(1)}`;
+                    // Set the link to the music section, passing mood as query parameter
+                    listenMusicBtn.href = `/player?mood=${mood}`;
+                    moodResultDiv.style.display = 'block';  // Show the result
+                } else {
+                    alert(result.error);
+                }
+
+            } catch (err) {
+                alert("Error accessing webcam: " + err);
+                console.error("Error accessing webcam: " + err);
+            }
+        });
+    </script>
+</body>
+</html>

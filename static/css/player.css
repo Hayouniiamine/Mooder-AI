@@ -1,0 +1,159 @@
+/* Ensure video is positioned behind all content */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Apply full-page layout */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header styling */
+.header {
+    background: rgba(15, 15, 20, 0.85);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    position: relative;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #6c63ff;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #f5f5f5;
+}
+
+#username {
+    font-weight: bold;
+    color: #6c63ff;
+}
+
+/* Player styling */
+.player-wrapper {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background: rgba(20, 20, 30, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: auto;
+    flex: 1;
+}
+/* Mood box styling with updated text style */
+.mood-box {
+    padding: 20px;
+    margin-top: 20px;
+    background: rgba(30, 30, 40, 0.6);
+    border-radius: 10px;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif; /* Updated font family */
+    font-size: 1.2rem; /* Adjusted font size */
+    font-weight: 500; /* Adjusted font weight */
+    line-height: 1.6; /* Added line height for better readability */
+    letter-spacing: 0.5px; /* Slightly increased letter spacing */
+    text-transform: uppercase; /* Uppercased text for emphasis */
+}
+
+
+/* Footer styling */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    width: 100%; /* Full width of the page */
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%; /* Full width of the page */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* About Section */
+.about {
+    flex: 1;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.about h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    opacity: 0.8;
+}
+
+/* Social Media Section */
+.social-media {
+    flex: 1;
+    text-align: right;
+}
+
+.social-media h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #6c63ff;
+}
+
+/* Copyright Section */
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}

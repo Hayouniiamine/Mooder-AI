@@ -1,0 +1,242 @@
+/* Root Variables */
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #574fdb;
+    --background-color: #1e1e2f;
+    --text-color: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --border-radius: 12px;
+    --shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    --white: #ffffff;
+    --font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+/* Apply Modern Font */
+body {
+    font-family: var(--font-family);
+    margin: 0; /* Removed margin */
+}
+
+/* Signup Container */
+.signup-container {
+    display: flex;
+    min-height: 100vh;
+    margin: 0; /* Removed margin */
+    padding: 0; /* Removed padding */
+}
+
+/* Left Side: Image */
+.left-side {
+    flex: 1;
+    background: url("../img/login.jpg") no-repeat center center/cover;
+    min-height: 100vh;
+    margin: 0; /* Removed margin */
+}
+
+/* Right Side: Signup Form */
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: gainsboro;
+    padding: 0; /* Removed padding */
+}
+
+.right-side .title {
+    font-size: 2rem;
+    color: var(--background-color);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Flash Messages */
+.flash-message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.flash-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Signup Form */
+.signup-form {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px; /* Reduced width of the form */
+}
+
+.signup-form .form-group {
+    margin-bottom: 20px;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Dark color for label text */
+}
+
+.signup-form input {
+    width: 90%; /* Reduced width of the input fields */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.signup-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.signup-form .btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background:gray;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.signup-form .btn:hover {
+    background: var(--secondary-color);
+}
+
+.login-link {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--background-color);
+}
+
+.login-link a {
+    color: var(--background-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--secondary-color);
+}
+/* Footer Styles */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0; /* Removed margin */
+    width: 100%; /* Ensure it spans full width */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%; /* Full width of the page */
+}
+
+/* About Section */
+.about {
+    flex: 1;
+    text-align: left;
+    margin-left: 15px; /* Moved the About section a little to the right */
+}
+
+.about h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    opacity: 0.8;
+}
+
+/* Social Media Section */
+.social-media {
+    flex: 1;
+    text-align: right;
+}
+
+.social-media h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #6c63ff;
+}
+
+/* Copyright Section */
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ==================== */
+/* Responsive Design  */
+/* ==================== */
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .social-media {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .copyright {
+        margin-top: 20px;
+    }
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333; /* Changed from white to dark color for better visibility */
+}

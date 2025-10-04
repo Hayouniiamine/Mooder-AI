@@ -1,0 +1,278 @@
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #574fdb;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --border-radius: 15px;
+    --shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --button-bg: #333; /* Dark gray color for buttons */
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('/static/img/hero-bg.jpg'); /* Changed the background image path */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.hero-section .content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-section .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.hero-section .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-section .btn {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    background-color: var(--primary-color);
+}
+
+.hero-section .btn-alt {
+    background-color: var(--button-bg); /* Same as the login button */
+    border: none; /* Removed border for uniformity */
+    color: white;
+}
+
+.hero-section .btn-alt:hover {
+    background-color: var(--primary-color);
+}
+
+/* About Section */
+.about-section {
+    background: var(--glass-bg);
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 50px auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Slideshow Section */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 50px auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.slideshow-container h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Increased height for bigger images */
+    overflow: hidden;
+}
+
+.slideshow .slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.slideshow .slide img {
+    width: 100%;
+    height: 100%; /* Ensure image takes full container height */
+    object-fit: cover; /* Images will cover the area */
+    border-radius: var(--border-radius);
+}
+
+.slideshow .slide p {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.slideshow-container .prev, .slideshow-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.slideshow-container .prev:hover, .slideshow-container .next:hover {
+    background: var(--primary-color);
+}
+
+.slideshow-container .prev {
+    left: 10px;
+}
+
+.slideshow-container .next {
+    right: 10px;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dots .dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dots .dot.active {
+    background-color: var(--primary-color);
+}
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    width: 100%; /* Full width of the page */
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%; /* Full width of the page */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* About Section */
+.about {
+    flex: 1;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.about h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    opacity: 0.8;
+}
+
+/* Social Media Section */
+.social-media {
+    flex: 1;
+    text-align: right;
+}
+
+.social-media h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #6c63ff;
+}
+
+/* Copyright Section */
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}

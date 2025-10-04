@@ -1,0 +1,224 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://images.pexels.com/photos/1135995/pexels-photo-1135995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    transform: translateY(-30px);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    transition: transform 0.3s ease-out;
+}
+
+/* Hover Effect for Container */
+.container:hover {
+    transform: translateY(-10px);
+}
+
+/* Avatar Section */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #6c63ff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease-in-out;
+}
+
+.avatar-container:hover .avatar {
+    transform: rotate(15deg);
+}
+
+/* User Info */
+.profile-info h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #6c63ff;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Label, Email & Mood Color Updated */
+.profile-info p {
+    font-size: 1.2rem;
+    color: #6c63ff;
+    margin: 5px 0;
+}
+
+/* User Actions */
+.user-actions {
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 14px 28px;
+    font-size: 1.2rem;
+    border-radius: 35px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back {
+    background-color: #6c63ff;
+    color: #fff;
+    margin-right: 20px;
+    border: 2px solid #6c63ff;
+    font-weight: bold;
+}
+
+.btn-logout {
+    background-color: #e74c3c;
+    color: #fff;
+    border: 2px solid #e74c3c;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.btn-back:hover {
+    background-color: #4b3cc1;
+    border: 2px solid #4b3cc1;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+    border: 2px solid #c0392b;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Footer Content */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+}
+
+/* About Section */
+.about h3 {
+    font-size: 1.6rem;
+    color: #6c63ff;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    opacity: 0.9;
+}
+
+/* Social Media Section */
+.social-media {
+    text-align: center;
+}
+
+.social-media h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #6c63ff;
+}
+
+/* FIXED: Social Media Icons Now Appear */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 2rem; /* Increased size for visibility */
+    transition: color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #6c63ff;
+    transform: scale(1.2);
+}
+
+/* Copyright Section */
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+/* Animations for Footer */
+.footer-container .about, .footer-container .social-media {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.footer-container .about {
+    animation-delay: 0.5s;
+}
+
+.footer-container .social-media {
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

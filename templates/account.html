@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mooder AI - Manage Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manage_account.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <img src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="User Avatar" class="avatar">
+                </div>
+                <h2>Welcome, {{ current_user.username }}!</h2>
+                <p>Email: {{ current_user.email }}</p>
+                <p>Latest Mood Detected:
+                    {% if session.get('mood') %}
+                    <strong>{{ session['mood'] }}</strong>
+                    {% else %}
+                    <strong>None</strong>
+                    {% endif %}
+                </p>
+                <div class="user-actions">
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-back">Back to Dashboard</a>
+                    <a href="{{ url_for('logout') }}" class="btn btn-logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="about">
+                <h3>About Mooder AI</h3>
+                <p>
+                    Mooder AI is an intelligent music player that adapts to your emotions. Using facial recognition
+                    technology, it detects your mood and plays music that fits your feelings. Experience a seamless
+                    connection between emotions and melodies!
+                </p>
+            </div>
+
+
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+
+
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 Mooder AI. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

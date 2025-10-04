@@ -1,0 +1,21 @@
+Server Name="PostgreSQL 17"
+password="system"
+----------------------
+Database="mooderdb"
+password="mypassword"
+username="myuser"
+----------------------
+mooderdb=# SELECT id, username, email FROM "user";
+ id |  username   |           email
+----+-------------+---------------------------
+  1 | hayouni     | aminhayouni030@gmail.com
+  2 | hayouniamin | amin@gmail.com
+  3 | amin123     | aminh@gmail.com
+  4 | test        | test@test.com
+  5 | azeae       | azzzzzz@a.com
+  7 | azeazae     | amain@a.com
+  8 | azeazaess   | aminhayounsi030@gmail.com
+  9 | azsazsqqqq  | am@a.com
+ 10 | KJHUIK      | AREZ@gmail.com
+ 11 | MOHSEN      | AMI@G.COM
+(10 rows)

@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "babel-loader": "^10.0.0",
+    "script-loader": "^0.7.2",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.22.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
+    "dotenv": "^16.4.7",
+    "face-api.js": "^0.20.0",
+    "path-browserify": "^1.0.1",
+    "spotify-web-api-node": "^5.0.2",
+    "stream-browserify": "^3.0.0",
+    "tfjs-image-recognition-base": "^0.6.0",
+    "vm-browserify": "^1.1.2",
+    "winston": "^3.17.0"
+  }
+}

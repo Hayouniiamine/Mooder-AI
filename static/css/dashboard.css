@@ -1,0 +1,221 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Header */
+.header {
+    background: #1e1e2f;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: white;
+}
+
+#username {
+    font-weight: bold;
+    color: #6c63ff;
+}
+
+/* Dashboard Section */
+.dashboard-container {
+    padding: 60px 20px;
+    background: #2a2a2a;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #6c63ff;
+    margin-bottom: 20px;
+}
+
+.dashboard-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+}
+
+/* Phone Frame */
+.phone-frame {
+    width: 300px;
+    height: 600px;
+    background: #333;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #6c63ff;
+}
+
+.phone-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.camera-screen {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 70%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Description Section */
+.description {
+    color: white;
+    max-width: 500px;
+    text-align: left;
+}
+
+.description h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.description p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: #6c63ff;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: #574fdb;
+}
+
+.btn-alt {
+    background: transparent;
+    border: 2px solid #6c63ff;
+    color: #6c63ff;
+}
+
+.btn-alt:hover {
+    background: #6c63ff;
+    color: white;
+}
+
+/* Mood Result Section */
+.mood-result {
+    margin-top: 30px;
+    display: none;
+}
+
+.mood-result p {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    width: 100%; /* Full width of the page */
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%; /* Full width of the page */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* About Section */
+.about {
+    flex: 1;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.about h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    opacity: 0.8;
+}
+
+/* Social Media Section */
+.social-media {
+    flex: 1;
+    text-align: right;
+}
+
+.social-media h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #6c63ff;
+}
+
+/* Copyright Section */
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
